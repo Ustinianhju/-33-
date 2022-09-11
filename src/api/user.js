@@ -27,3 +27,16 @@ export const sendCodeAPI = (modile) => {
     url: `/v1_0/sms/codes/${modile}`
   })
 }
+
+/**
+ * 获取用户信息
+ * @returns Promise
+ */
+export const getUserInfoAPI = () => {
+  return request({
+    url: '/v1_0/user'
+    // headers: {
+    //   Authorization: `Bearer ${store.state.tokenObj.token}`
+    // }
+  })
+}
