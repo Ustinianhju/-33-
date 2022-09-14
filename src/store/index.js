@@ -23,14 +23,14 @@ export default new Vuex.Store({
       key: 'HEIMA_TOUTIAO',
       // storage:Window.sessionStorage
       reducer(state) {
-        const { tokenObj } = state
-        return { tokenObj }
+        const { tokenObj, myChannels } = state
+        return { tokenObj, myChannels }
       }
     })
   ],
   state: {
     tokenObj: {},
-    a: 1
+    myChannels: []
   },
   getters: {
     isLogin(state) {
@@ -40,6 +40,14 @@ export default new Vuex.Store({
   mutations: {
     SET_TOKEN(state, token) {
       state.tokenObj = token
+    },
+
+    /**
+     *
+     * @param {Array} channels  删除或者添加后的最新的channels
+     */
+    SET_MY_CHANNELS(state, channels) {
+      state.myChannels = channels
     }
   }
 })
