@@ -1,6 +1,8 @@
 <template>
   <div>
-    <router-view></router-view>
+    <transition name="van-slide-left" mode="out-in">
+      <router-view></router-view>
+    </transition>
     <!-- <h1>{{ count }}</h1>
     <span>count的10倍:{{ bigNum }}</span
     ><br />

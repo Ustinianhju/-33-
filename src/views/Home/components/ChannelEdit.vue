@@ -3,13 +3,25 @@
     <!-- 我的频道 -->
     <!-- 标题 -->
     <van-cell title="我的频道">
-      <van-button class="btn" size="mini" round style="color: red; border-color: red" @click="isEdit = !isEdit">{{
-      isEdit ? '完成' : '编辑' }}</van-button>
+      <van-button
+        class="btn"
+        size="mini"
+        round
+        style="color: red; border-color: red"
+        @click="isEdit = !isEdit"
+        >{{ isEdit ? '完成' : '编辑' }}</van-button
+      >
     </van-cell>
     <div class="my-pannel">
       <van-grid gutter="10" :border="false">
-        <van-grid-item v-for="(item, index) in myChannels" :class="{ active: item.name === '推荐' }" :key="item.id"
-          :text="item.name" :icon="isEdit && item.name !== '推荐' ? 'cross' : ''" @click="handelMyChannel(item, index)">
+        <van-grid-item
+          v-for="(item, index) in myChannels"
+          :class="{ active: item.name === '推荐' }"
+          :key="item.id"
+          :text="item.name"
+          :icon="isEdit && item.name !== '推荐' ? 'cross' : ''"
+          @click="handelMyChannel(item, index)"
+        >
         </van-grid-item>
       </van-grid>
     </div>
@@ -17,7 +29,13 @@
     <van-cell title="推荐频道"></van-cell>
     <div class="recommend-pannel">
       <van-grid gutter="10" :border="false">
-        <van-grid-item v-for="item in recommendChannels" :key="item.id" :text="item.name" icon="plus" @click="$emit('add-channel',item)">
+        <van-grid-item
+          v-for="item in recommendChannels"
+          :key="item.id"
+          :text="item.name"
+          icon="plus"
+          @click="$emit('add-channel', item)"
+        >
         </van-grid-item>
       </van-grid>
     </div>
@@ -94,7 +112,6 @@ export default {
 
 // 我的频道
 .my-pannel {
-
   // 编辑按钮居中
   .van-cell__value {
     display: flex;
@@ -128,7 +145,6 @@ export default {
 
 // 推荐频道
 .recommend-pannel {
-
   // 推荐频道加号样式
   :deep(.van-grid-item__content) {
     flex-direction: row;
