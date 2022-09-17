@@ -40,3 +40,33 @@ export const getUserInfoAPI = () => {
     // }
   })
 }
+
+/**
+ *上传图片
+ * @param {*} file  裁剪过后的图片的file对象
+ * @returns
+ */
+
+export const uploadPhoto = (file) => {
+  const fm = new FormData()
+  fm.append('photo', file)
+  return request({
+    url: '/v1_0/user/photo',
+    method: 'PATCH',
+    data: fm
+  })
+}
+
+export const getUserProfile = () => {
+  return request({
+    url: '/v1_0/user/profile'
+  })
+}
+
+export const getUserName = (data) => {
+  return request({
+    url: '/v1_0/user/profile',
+    method: 'PATCH',
+    data
+  })
+}
