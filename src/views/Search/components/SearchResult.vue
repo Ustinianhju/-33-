@@ -54,6 +54,7 @@ export default {
           this.perPage,
           this.keywords
         )
+        // console.log(data)
         if (data.data.results.length === 0) {
           // 当请求数据页面不满时，会向后台一直请求数据，加一个if判断，当没有数据时，不会一直发送请求
           this.finished = true

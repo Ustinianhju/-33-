@@ -4,11 +4,13 @@
       v-if="article.cover.type === 0"
       :title="article.title"
       :label="label"
+      @click="$router.push(`/article/${article.art_id}`)"
     ></van-cell>
     <van-cell
       v-else-if="article.cover.type === 1"
       :title="article.title"
       :label="label"
+      @click="$router.push(`/article/${article.art_id}`)"
     >
       <van-image
         width="180"
@@ -16,7 +18,11 @@
         :src="article.cover.images[0]"
       ></van-image>
     </van-cell>
-    <van-cell v-else-if="article.cover.type === 2" title="两张图片">
+    <van-cell
+      v-else-if="article.cover.type === 2"
+      title="两张图片"
+      @click="$router.push(`/article/${article.art_id}`)"
+    >
       <template #label>
         <van-image
           v-for="(item, index) in article.cover.images"

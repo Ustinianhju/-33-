@@ -8,7 +8,9 @@ module.exports = {
       // 如果事vant 37.5 如果自己的代码 75
       // file当前编译的css的文件路径
       rootValue: ({ file }) => (/vant/.test(file) ? 37.5 : 75),
-      propList: ['*'] //所有的属性都转为rem
+      propList: ['*'], //所有的属性都转为rem
+      exclude: 'github-markdown'
     })
+
   ]
 }

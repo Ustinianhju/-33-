@@ -58,7 +58,9 @@ export default {
       // 时间戳 new Date().valueof()   Date.now()    +new Date()
       try {
         const { data } = await getArticles(this.id, +new Date())
+        // console.log(data.data)
         this.Articles = data.data.results
+        // console.log(this.Articles[4].art_id)
         // 保存下一页的时间戳，用于分页
         this.preTimestamp = data.data.pre_timestamp
       } catch (error) {
@@ -80,6 +82,7 @@ export default {
 
         // 发送请求
         const { data } = await getArticles(this.id, this.preTimestamp)
+        // console.log(data)
         if (!data.data.pre_timestamp) {
           // 用于判断是否还能请求到文章
           this.finished = true

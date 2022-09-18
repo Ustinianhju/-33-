@@ -2,7 +2,14 @@
   <div>
     <van-nav-bar class="navbar">
       <template #title>
-        <van-button @click="$router.push('/Search')" icon="search" size="small" round block>搜索</van-button>
+        <van-button
+          @click="$router.push('/Search')"
+          icon="search"
+          size="small"
+          round
+          block
+          >搜索</van-button
+        >
       </template>
     </van-nav-bar>
     <!-- active:高亮的tab的索引 -->
@@ -80,6 +87,7 @@ export default {
     async getChannel() {
       try {
         const { data } = await getChannelAPI()
+        // console.log(data)
         this.channels = data.data.channels
       } catch (error) {
         if (!error.response) {
